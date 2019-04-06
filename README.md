@@ -35,6 +35,28 @@ Please make sure that you can visit GitHub via SSH and you can do `sudo` on your
 
         $ ./fetch-all.sh
 
+1. Run `build-deps.sh` to build and install gvfb, chipmuk, and harzbuff:
+
+        $ ./build-deps.sh
+
+1. Run `build-all.sh` to build all:
+
+        $ ./build-all.sh
+
+1. Run `mguxdemo`:
+
+        $ cd /usr/local/bin
+        $ ./mguxdemo
+
+When there were some updates in the remote repos, you can run `update-all.sh` to
+update them. You can run `clean-build-all.sh` to uninstall, clean,
+and re-install them.
+
+Note that you might need to run `ldconfig` to refresh the shared libraries cache
+when running `mguxdemo`.
+
+### Commands to build dependencies
+
 1. Make and install `gvfb`:
 
         $ cd gvfb
@@ -58,30 +80,6 @@ Please make sure that you can visit GitHub via SSH and you can do `sudo` on your
         $ ./config-extern.sh
         $ make; sudo make install
         $ cd ../..
-
-1. Install MiniGUI resources:
-
-        $ cd minigui-res
-        $ ./augen.sh
-        $ ./configure
-        $ sudo make install
-        $ cd ..
-
-1. Run `build-all.sh` to build all:
-
-        $ ./build-all.sh
-
-1. Run `mguxdemo`:
-
-        $ cd /usr/local/bin
-        $ ./mguxdemo
-
-When there were some updates in the remote repos, you can run `update-all.sh` to
-update them. You can run `clean-build-all.sh` to uninstall, clean,
-and re-install them.
-
-Note that you might need to run `ldconfig` to refresh the shared libraries cache
-when running `mguxdemo`.
 
 ## ChangeLog
 
