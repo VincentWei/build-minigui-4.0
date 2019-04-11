@@ -1,11 +1,12 @@
 #!/bin/bash
 
 echo MAKE TARBALLS OF MINIGUI DOCS
-for comp in minigui; do
+for comp in minigui mgutils mgplus mgeff mgncs; do
     cd $comp
     make docs
     for name in doc-*; do
         tar czf $name.tar.gz $name
+        rm $name -rf
     done
     mv *.tar.gz ..
     cd ..
