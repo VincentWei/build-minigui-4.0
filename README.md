@@ -4,7 +4,7 @@ This repo contains some scripts and dependencies to build MiniGUI 4.0.x
 
 ## Building
 
-This instruction assumes that you are using Ubuntu Linux 16.04 LTS.
+This instruction assumes that you are using Ubuntu Linux 16.04 LTS or 18.04 LTS.
 
 ### Prerequisites
 
@@ -26,6 +26,9 @@ You can run `apt install <package_name>` to install the software on Ubuntu Linux
     * libfreetype6-dev
     * libsqlite3-dev
     * libxml2-dev
+
+If you are using Ubuntu Linux 18.04, please install `libpng-dev`. Ubuntu 18.04
+does not provide support for libpng12-dev.
 
 ### Steps
 
