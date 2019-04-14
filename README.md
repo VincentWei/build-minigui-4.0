@@ -8,7 +8,8 @@ This instruction assumes that you are using Ubuntu Linux 16.04 LTS or 18.04 LTS.
 
 ### Prerequisites
 
-You can run `apt install <package_name>` to install the software on Ubuntu Linux.
+You should run `apt install <package_name>` to install the following packages
+on your Ubuntu Linux.
 
   * Building tools:
     * git
@@ -22,7 +23,7 @@ You can run `apt install <package_name>` to install the software on Ubuntu Linux
  * Dependent libraries:
     * libgtk2.0-dev
     * libjpeg-dev
-    * libpng12-dev
+    * libpng12-dev (libpng-dev on Ubuntu Linux 18.04 instead)
     * libfreetype6-dev
     * libsqlite3-dev
     * libxml2-dev
