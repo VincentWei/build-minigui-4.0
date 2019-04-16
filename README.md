@@ -27,6 +27,7 @@ on your Ubuntu Linux.
     * libfreetype6-dev
     * libsqlite3-dev
     * libxml2-dev
+    * libssl1.0-dev
 
 If you are using Ubuntu Linux 18.04, please install `libpng-dev`. Ubuntu 18.04
 does not provide support for libpng12-dev.
