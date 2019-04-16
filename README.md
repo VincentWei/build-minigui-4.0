@@ -40,7 +40,7 @@ Please make sure that you can visit GitHub via SSH and you can do `sudo` on your
 
         $ ./fetch-all.sh
 
-1. Run `build-deps.sh` to build and install gvfb, chipmuk, and harzbuff:
+1. Run `build-deps.sh` to build and install gvfb, chipmunk, and harfbuzz:
 
         $ ./build-deps.sh
 
@@ -77,10 +77,10 @@ when running `mguxdemo`.
         $ make; sudo make install
         $ cd ../..
 
-1. Make and install `harzbuff` library (DO NOT use the harzbuff-dev package
+1. Make and install `harfbuzz` library (DO NOT use the harfbuzz-dev package
    which is provided by Ubuntu):
 
-        $ cd 3rd-party/harzbuff
+        $ cd 3rd-party/harfbuzz
         $ ./autogen.sh
         $ ./config-extern.sh
         $ make; sudo make install
