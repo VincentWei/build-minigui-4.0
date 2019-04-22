@@ -10,7 +10,7 @@ sudo make uninstall; make clean; make -j$nr_jobs; sudo make install
 cd ..
 
 echo UNINSTALL AND CLEAN OTHERS...
-for comp in mgncs4touch mgncs mgeff mgplus mgutils; do
+for comp in minigui-res mgncs4touch mgncs mgeff mgplus mgutils; do
     cd $comp
     ./autogen.sh; ./configure --enable-develmode
     sudo make uninstall; make clean
@@ -18,7 +18,7 @@ for comp in mgncs4touch mgncs mgeff mgplus mgutils; do
 done
 
 echo MAKE AND INSTALL NOW...
-for comp in mg-tests mgutils mgplus mgeff mgncs mgncs4touch mg-samples mg-tools cell-phone-ux-demo; do
+for comp in minigui-res mg-tests mgutils mgplus mgeff mgncs mgncs4touch mg-samples mg-tools cell-phone-ux-demo; do
     cd $comp
     make -j$nr_jobs; sudo make install
     cd ..
