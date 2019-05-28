@@ -21,7 +21,7 @@ mv *.tar.gz ..
 cd ..
 
 echo MAKE TARBALLS OF MINIGUI
-for comp in minigui minigui-res mgutils mgplus mgeff mgncs mg-tests mg-samples mgncs4touch cell-phone-ux-demo; do
+for comp in minigui minigui-res mgutils mgplus mgeff mgncs mg-tests mg-samples mgncs4touch mg-demos cell-phone-ux-demo; do
     cd $comp
     make dist
     mv *.tar.gz ..
