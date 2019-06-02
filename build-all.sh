@@ -1,7 +1,9 @@
 #!/bin/bash
 
-runmode=ths
-nr_jobs=8
+source config.sh
+
+runmode=$RUNMODE
+nr_jobs=$NR_JOBS
 
 cd minigui
 ./autogen.sh; ./configure --enable-develmode --with-runmode=$runmode

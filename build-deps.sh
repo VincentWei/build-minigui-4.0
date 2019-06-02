@@ -1,6 +1,8 @@
 #!/bin/bash
 
-nr_jobs=8
+source config.sh
+
+nr_jobs=$NR_JOBS
 
 echo "BUILDING gvfb"
 cd gvfb

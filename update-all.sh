@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source config.sh
+
 # GVFB
 echo Updating gvfb
 cd gvfb; git pull; cd ..

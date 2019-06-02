@@ -1,7 +1,9 @@
 #!/bin/bash
 
-runmode=ths
-nr_jobs=8
+source config.sh
+
+runmode=$RUNMODE
+nr_jobs=$NR_JOBS
 
 echo UNINSTALL, MAKE, AND INSTALL MiniGUI FIRST...
 cd minigui
