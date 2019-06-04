@@ -10,4 +10,4 @@ REPO_URL=git@github.com:VincentWei
 RUNMODE=ths
 
 # The jobs number when building source.
-NR_JOBS=32
+NR_JOBS=8
