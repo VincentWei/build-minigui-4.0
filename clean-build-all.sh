@@ -20,7 +20,7 @@ for comp in minigui-res mgncs4touch mgncs mgeff mgplus mgutils; do
 done
 
 echo MAKE AND INSTALL NOW...
-for comp in minigui-res mg-tests mgutils mgplus mgeff mgncs mgncs4touch mg-samples mg-tools mg-demos cell-phone-ux-demo; do
+for comp in minigui-res mg-tests mgutils mgplus mgeff mgncs mgncs4touch mg-tools mg-samples mg-demos cell-phone-ux-demo; do
     cd $comp
     make -j$nr_jobs; sudo make install
     cd ..
