@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ ! -f myconfig.sh ]; then
+    cp config.sh myconfig.sh
+fi
+
+source myconfig.sh
+
 rm *.tar.[bg]z* -f
 
 echo MAKE TARBALLS OF MINIGUI DOCS

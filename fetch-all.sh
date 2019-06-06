@@ -1,6 +1,10 @@
 #!/bin/bash
 
-source config.sh
+if [ ! -f myconfig.sh ]; then
+    cp config.sh myconfig.sh
+fi
+
+source myconfig.sh
 
 # GVFB
 git clone $REPO_URL/gvfb.git
