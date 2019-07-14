@@ -21,5 +21,11 @@ REPO_URL=https://github.com/VincentWei
 RUNMODE=ths
 
 #
-# The jobs number when building source.
-NR_JOBS=8
+# extra options for configuring MiniGUI core.
+# MGOPTS="--with-targetname=external"
+MGOPTS=
+
+#
+# The jobs number for building source.
+NRJOBS=`getconf _NPROCESSORS_ONLN`
+
