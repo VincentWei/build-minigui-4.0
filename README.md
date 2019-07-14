@@ -35,7 +35,11 @@ does not provide support for libpng12-dev.
 
 ### Steps
 
-Please make sure that you can visit GitHub via SSH and you can do `sudo` on your Linux box.
+Please make sure that you can visit GitHub and you can do `sudo` on your Linux box.
+
+1. Copy `config.sh` to `myconfig.sh` and edit `myconfig.sh` to match your needs:
+
+        $ cp config.sh myconfig.sh
 
 1. Run `fetch-all.sh` to fetch all source from GitHub:
 
@@ -62,6 +66,9 @@ Note that you might need to run `ldconfig` to refresh the shared libraries cache
 when running `mguxdemo`.
 
 ### Commands to build dependencies
+
+The following steps are those ones in `build-deps.sh`. We list them here for
+your information:
 
 1. Make and install `gvfb`:
 
