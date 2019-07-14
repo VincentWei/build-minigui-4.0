@@ -8,7 +8,7 @@ source myconfig.sh
 
 echo UNINSTALL, MAKE, AND INSTALL MiniGUI FIRST...
 cd minigui
-./autogen.sh; ./configure --enable-develmode --with-RUNMODE=$RUNMODE $MGOPTS
+./autogen.sh; ./configure --enable-develmode --with-runmode=$RUNMODE $MGOPTS
 sudo make uninstall; make clean; make -j$NR_JOBS; sudo make install
 cd ..
 
