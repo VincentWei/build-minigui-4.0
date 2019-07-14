@@ -21,14 +21,14 @@ for comp in minigui-res mgncs4touch mgncs mgeff mgplus mgutils; do
 done
 
 echo MAKE AND INSTALL COMPONENTS NOW...
-for comp in minigui-res mg-tests mgutils mgplus mgeff mgncs mgncs4touch; do
+for comp in minigui-res mgutils mgplus mgeff mgncs mgncs4touch; do
     cd $comp
     make -j$NR_JOBS; sudo make install
     cd ..
 done
 
-echo MAKE AND INSTALL TOOLS, SAMPLES, AND DEMOS NOW...
-for comp in mg-tools mg-samples mg-demos cell-phone-ux-demo; do
+echo MAKE AND INSTALL TOOLS, TESTS, SAMPLES, AND DEMOS NOW...
+for comp in mg-tools mg-tests mg-samples mg-demos cell-phone-ux-demo; do
     cd $comp
     ./autogen.sh; ./configure
     make clean; make -j$NR_JOBS; sudo make install
