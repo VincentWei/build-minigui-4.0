@@ -38,7 +38,7 @@ echo MAKE TARBALLS OF THIRD-PARTY PACKAGES
 for comp in chipmunk harfbuzz; do
     cd 3rd-party/$comp
     make dist || make package_source
-    mv *.tar.[gb]z* ../..
+    mv *.tar.[xgb]z* ../..
     cd ../..
 done
 
