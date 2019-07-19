@@ -1,12 +1,10 @@
-# Build MiniGUI 4.0
+# Building MiniGUI 4.0
 
 This repo contains some scripts and dependencies to build MiniGUI 4.0.x
 
-## Building
-
 This instruction assumes that you are using Ubuntu Linux 16.04 LTS or 18.04 LTS.
 
-### Prerequisites
+## Prerequisites
 
 You should run `apt install <package_name>` to install the following packages
 on your Ubuntu Linux.
@@ -33,7 +31,7 @@ on your Ubuntu Linux.
 If you are using Ubuntu Linux 18.04, please install `libpng-dev`. Ubuntu 18.04
 does not provide support for libpng12-dev.
 
-### Steps
+## Steps
 
 Please make sure that you can visit GitHub and you can do `sudo` on your Linux box.
 
@@ -65,7 +63,7 @@ and re-install them.
 Note that you might need to run `ldconfig` to refresh the shared libraries cache
 when running `mguxdemo`.
 
-### Commands to build dependencies
+## Commands to build dependencies
 
 The following steps are those ones in `build-deps.sh`. We list them here for
 your information:
