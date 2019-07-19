@@ -23,6 +23,8 @@ on your Ubuntu Linux.
     * libjpeg-dev
     * libpng12-dev (libpng-dev on Ubuntu Linux 18.04 instead)
     * libfreetype6-dev
+    * libinput-dev
+    * libdrm-dev
     * libsqlite3-dev
     * libxml2-dev
     * libssl1.0-dev
