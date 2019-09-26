@@ -8,14 +8,14 @@ source myconfig.sh
 
 echo UNINSTALL, MAKE, AND INSTALL MiniGUI FIRST...
 cd minigui
-./autogen.sh; ./configure --enable-develmode --with-runmode=$RUNMODE $MGOPTS
+./autogen.sh; ./configure $GOPTS --with-runmode=$RUNMODE $MGOPTS
 sudo make uninstall; make clean; make -j$NR_JOBS; sudo make install
 cd ..
 
 echo UNINSTALL AND CLEAN OTHERS...
 for comp in minigui-res mgncs4touch mgncs mgeff mgplus mgutils; do
     cd $comp
-    ./autogen.sh; ./configure --enable-develmode
+    ./autogen.sh; ./configure $GOPTS
     sudo make uninstall; make clean
     cd ..
 done
@@ -30,7 +30,7 @@ done
 echo MAKE AND INSTALL TOOLS, TESTS, SAMPLES, AND DEMOS NOW...
 for comp in mg-tools mg-tests mg-samples mg-demos cell-phone-ux-demo; do
     cd $comp
-    ./autogen.sh; ./configure --enable-develmode
+    ./autogen.sh; ./configure $GOPTS
     make clean; make -j$NR_JOBS; sudo make install
     cd ..
 done

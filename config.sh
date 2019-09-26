@@ -17,6 +17,11 @@ REPO_URL=https://github.com/VincentWei
 #REPO_URL=git4os@gitlab.fmsoft.cn:VincentWei
 
 #
+# Global configuration options
+#GOPTS="--enable-develmode"
+GOPTS=
+
+#
 # The runtime mode of MiniGUI; can be ths, procs, or sa.
 RUNMODE=ths
 
