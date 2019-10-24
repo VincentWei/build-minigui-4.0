@@ -1,0 +1,4 @@
+#!/bin/bash
+./configure --prefix=${PREFIX} \
+           ${MINIGUI_RES_CONFIG}
+make $MAKE_PARAM && make install && echo done

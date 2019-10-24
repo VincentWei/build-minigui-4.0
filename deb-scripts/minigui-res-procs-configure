@@ -1,0 +1,3 @@
+#!/bin/bash
+export MINIGUI_RES_CONFIG="
+"

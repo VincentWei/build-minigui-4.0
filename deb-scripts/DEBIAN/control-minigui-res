@@ -1,0 +1,10 @@
+Package: minigui-res
+Version: ${VERSION}
+Section: 
+Priority: optional
+Architecture: all
+Depends: 
+Installed-Size: 512
+Maintainer: [url=http://www.minigui.com/]http://www.minigui.com/
+Description: The resource of MiniGUI, it contains the fonts, cursors, icons, and bitmaps used by MiniGUI V3.2. (version ${VERSION})
+

@@ -1,0 +1,10 @@
+Package: gvfb
+Version: ${VERSION}
+Section: 
+Priority: optional
+Architecture: ${ARCHITECTURE}
+Depends: libgtk2.0-dev
+Installed-Size: 512
+Maintainer: [url=http://www.minigui.com/]http://www.minigui.com/
+Description: This is a virtual frame buffer program running on Gtk-2.0. This program (gvfb) is compliant to MiniGUI V3.0's XVFB specification. (versoin ${VERSION})
+

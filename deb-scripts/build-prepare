@@ -1,0 +1,42 @@
+#!/bin/bash
+#install directory
+BIT=`getconf LONG_BIT`
+if [ "$BIT" == "32" ] 
+then
+    export PLATFORM=i386
+else
+    export PLATFORM=x86_64
+fi
+
+export PREFIX_BASE=$PWD/../target
+export OUT_PATH=$PWD/../target/out
+export DEB_PATH=$PWD/../target/deb
+export PREFIX=$PREFIX_BASE/out/usr/local/
+export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig
+export MAKE_PARAM="-j4"
+
+
+export MINIGUI_SRC="${PWD}/../minigui"
+export MGUTILS_SRC="${PWD}/../mgutils"
+export MGPLUS_SRC="${PWD}/../mgplus"
+export MGEFF_SRC="${PWD}/../mgeff"
+export MGNCS_SRC="${PWD}/../mgncs"
+export MINIGUI_RES="${PWD}/../minigui-res"
+export GVFB_SRC="${PWD}/../gvfb"
+
+#cross-compile gcc 
+export CROSSCOMPILER_BIN=""
+export TARGET=
+
+export BOARD_PARAM="-O2 -fPIC"
+export BOARD_LDFLAGS="" 
+export BOARD_CFLAGS_INC=""
+export BOARD_CFLAGS="$BOARD_PARAM $BOARD_CFLAGS_INC"
+export BOARD_CXXFLAGS=$BOARD_CFLAGS
+export BOARD_CPPFLAGS=$BOARD_CFLAGS
+
+export MINIGUI_LDFLAGS="-L${PREFIX}/lib"
+export MINIGUI_CFLAGS="-I${PREFIX}/include"
+export MINIGUI_CXXPFLAGS=${MINIGUI_CFLAGS}
+export MINIGUI_CPPFLAGS=${MINIGUI_CFLAGS}
+

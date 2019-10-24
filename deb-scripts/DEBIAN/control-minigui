@@ -1,0 +1,13 @@
+Package: ${PACKAGE}
+Version: ${VERSION}
+Section: 
+Priority: optional
+Architecture: ${ARCHITECTURE}
+Depends: gvfb, minigui-res, libcurl4-gnutls-dev, libxml2-dev, libfreetype6-dev, libjpeg-dev, liblua5.1-0-dev
+Installed-Size: 512
+Maintainer: [url=http://www.minigui.com/]http://www.minigui.com/
+Description: ${DEVELOPMENT} MiniGUI is a mature cross-platform windowing system and GUI system for embedded and smart IoT devices. (runmode: ${RUNTIME_MODE}; version ${VERSION})
+
+
+
+

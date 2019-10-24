@@ -1,0 +1,6 @@
+#!/bin/bash
+export MGNCS_CONFIG=" 
+    --enable-ctrlold-mledit \
+    --enable-datasource \
+    --enable-ctrltexteditor
+"

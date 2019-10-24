@@ -1,0 +1,19 @@
+#!/bin/bash
+source ${SCRIPTS_DIR}/mgplus-configure
+
+CC=${TARGET}gcc \
+CXX=${TARGET}g++ \
+LD=${TARGET}ld \
+AS=${TARGET}as \
+AR=${TARGET}ar \
+LDFLAGS="${MINIGUI_LDFLAGS} ${BOARD_LDFLAGS}" \
+CFLAGS="${MINIGUI_CFLAGS} ${BOARD_CFLAGS}" \
+CXXFLAGS="${MINIGUI_CXXFLAGS} ${BOARD_CXXFLAGS}" \
+CPPFLAGS="${MINIGUI_CPPFLAGS} ${BOARD_CPPFLAGS}" \
+./configure --prefix=${PREFIX} \
+		--build=${PLATFORM}-linux \
+		--host=${PLATFORM}-linux \
+		--target=${PLATFORM}-linux \
+        ${MGPLUS_CONFIG}
+
+make $MAKE_PARAM && make install && echo done

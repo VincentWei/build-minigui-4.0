@@ -1,0 +1,6 @@
+#!/bin/bash
+source ${SCRIPTS_DIR}/gvfb-configure
+
+cmake -DCMAKE_INSTALL_PREFIX=${PREFIX} -DCMAKE_LIBRARY_PATH=${PREFIX}/lib -DCMAKE_INCLUDE_PATH=${PREFIX}/include
+
+make $MAKE_PARAM && make install && echo done 

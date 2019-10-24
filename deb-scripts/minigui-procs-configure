@@ -1,0 +1,32 @@
+#!/bin/bash
+export MINIGUI_CONFIG="
+    --with-runmode=procs \
+    --with-ttfsupport=ft2 \
+    --enable-qpfsupport \
+    --enable-gb18030support \
+    --enable-ctrlstatic \
+    --enable-ctrlbutton \
+    --enable-ctrlsledit \
+    --enable-ctrlbidisledit \
+    --enable-ctrlnewtextedit \
+    --enable-ctrllistbox \
+    --enable-ctrlpgbar \
+    --enable-ctrlcombobox \
+    --enable-ctrlpropsheet \
+    --enable-ctrltrackbar \
+    --enable-ctrlscrollbar \
+    --enable-ctrlnewtoolbar \
+    --enable-ctrlmenubtn \
+    --enable-ctrlscrollview \
+    --enable-ctrltextedit \
+    --enable-ctrlmonthcal \
+    --enable-ctrltreeview \
+    --enable-ctrltreeview-rdr \
+    --enable-ctrlspinbox \
+    --enable-ctrlcoolbar \
+    --enable-ctrllistview \
+    --enable-ctrliconview \
+    --enable-ctrlgridview \
+    --enable-ctrlanimation
+"
+
