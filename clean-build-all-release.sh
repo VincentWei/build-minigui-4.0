@@ -27,8 +27,8 @@ for comp in minigui-res mgutils mgplus mgeff mgncs mgncs4touch; do
     cd ..
 done
 
-echo MAKE AND INSTALL TOOLS, TESTS, SAMPLES, AND DEMOS NOW...
-for comp in mg-tools mg-tests mg-samples mg-demos cell-phone-ux-demo; do
+echo MAKE AND INSTALL TOOLS, SAMPLES, AND DEMOS NOW...
+for comp in mg-tools mg-samples mg-demos cell-phone-ux-demo; do
     cd $comp
     ./autogen.sh; ./configure
     make clean; make -j$NR_JOBS; sudo make install
