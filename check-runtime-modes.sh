@@ -22,6 +22,20 @@ check_minigui_components() {
     done
 }
 
+check_minigui_test() {
+    for comp in mgutils mg-tests; do
+        cd $comp
+        ./configure && make clean && make -j$NR_JOBS && sudo make install
+        if [ "$?" != "0" ]; then
+            echo "====="
+            echo "ERROR WHEN COMPILING $comp FOR $RUMMODE"
+            echo "====="
+            exit 1
+        fi
+        cd ..
+    done
+}
+
 check_minigui_ths() {
     RUNMODE="MINIGUI THREADS"
     cd minigui
@@ -34,7 +48,37 @@ check_minigui_ths() {
     fi
     cd ..
 
-    check_components
+    check_minigui_components
+}
+
+check_minigui_ths_incore() {
+    RUNMODE="MINIGUI THREADS WITH INCORE RESOURCE"
+    cd minigui
+    ./configure --with-runmode=ths --enable-incoreres --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
+    if [ "$?" != "0" ]; then
+        echo "====="
+        echo "ERROR WHEN COMPILING minigui FOR $RUNMODE"
+        echo "====="
+        exit 1
+    fi
+    cd ..
+
+    check_minigui_components
+}
+
+check_minigui_ths_nocursor() {
+    RUNMODE="MINIGUI THREADS WITH NO CURSOR"
+    cd minigui
+    ./configure --with-runmode=ths --disable-cursor --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
+    if [ "$?" != "0" ]; then
+        echo "====="
+        echo "ERROR WHEN COMPILING minigui FOR $RUNMODE"
+        echo "====="
+        exit 1
+    fi
+    cd ..
+
+    check_minigui_components
 }
 
 check_minigui_sa() {
@@ -49,7 +93,7 @@ check_minigui_sa() {
     fi
     cd ..
 
-    check_components
+    check_minigui_components
 }
 
 check_minigui_procs_sharedfb() {
@@ -64,7 +108,7 @@ check_minigui_procs_sharedfb() {
     fi
     cd ..
 
-    check_components
+    check_minigui_components
 }
 
 check_minigui_procs_compos() {
@@ -78,20 +122,73 @@ check_minigui_procs_compos() {
         exit 1
     fi
     cd ..
+}
 
-    check_components
+check_minigui_with_options() {
+    RUNMODE="MiniGUI configured with $1"
+    cd minigui
+    ./configure --enable-develmode $1 && make clean && make -j$NR_JOBS && sudo make install
+    if [ "$?" != "0" ]; then
+        echo "====="
+        echo "ERROR WHEN COMPILING minigui FOR $RUNMODE"
+        echo "====="
+        exit 1
+    fi
+    cd ..
+
+    if [ "x$ONLYTEST" = "xyes" ]; then
+        check_minigui_test
+    else
+        check_minigui_components
+    fi
+}
+
+check_with_options() {
+    OPTIONS="--with-runmode=$1"
+
+    index=0
+    for i in $*
+    do
+        if [ $index != 0 ]; then
+            if [ ${i:0:1} = "-" ]; then
+                OPTIONS="$OPTIONS --disable$i"
+            else
+                OPTIONS="$OPTIONS --enable-$i"
+            fi
+        fi
+        let index+=1
+    done
+
+    echo "$OPTIONS"
+    check_minigui_with_options "$OPTIONS"
 }
 
 if [ $# == 0 ]; then
-    check_minigui_ths
-    check_minigui_sa
-    check_minigui_procs_sharedfb
-    check_minigui_procs_compos
+    ONLYTEST="no"
+
+    check_with_options "ths"
+    check_with_options "ths incoreres"
+    check_with_options "ths incoreres -cursor"
+    check_with_options "ths -cursor"
+
+    check_with_options "sa"
+    check_with_options "sa incoreres"
+    check_with_options "sa incoreres -cursor"
+    check_with_options "sa -cursor"
+
+    check_with_options "procs -compositing"
+    check_with_options "procs -compositing -cursor"
+    check_with_options "procs -compositing incoreres"
+    check_with_options "procs -compositing incoreres -cursor"
+
+    check_with_options "procs compositing"
+    check_with_options "procs compositing -cursor"
+    check_with_options "procs compositing incoreres"
+    check_with_options "procs compositing incoreres -cursor"
 else
-    for i in $*
-    do
-        check_minigui_$i
-    done
+    ONLYTEST="yes"
+
+    check_with_options $*
 fi
 
 echo "====="
