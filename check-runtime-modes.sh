@@ -146,10 +146,10 @@ check_minigui_with_options() {
 check_with_options() {
     OPTIONS="--with-runmode=$1"
 
-    index=0
+    index=1
     for i in $*
     do
-        if [ $index != 0 ]; then
+        if [ $index != 1 ]; then
             if [ ${i:0:1} = "-" ]; then
                 OPTIONS="$OPTIONS --disable$i"
             else
