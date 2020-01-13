@@ -9,7 +9,7 @@ source myconfig.sh
 RUNMODE="CURRENT RUNTIME INSTALLED"
 
 check_minigui_components() {
-    for comp in mgutils mgplus mgeff mgncs mgncs4touch mg-tests mg-tools mg-samples mg-demos cell-phone-ux-demo; do
+    for comp in mgutils mgplus mgeff mgncs mgncs4touch mg-tests mg-tools mg-samples mg-demos; do
         cd $comp
         ./configure && make clean && make -j$NR_JOBS && sudo make install
         if [ "$?" != "0" ]; then
@@ -166,25 +166,25 @@ check_with_options() {
 if [ $# == 0 ]; then
     ONLYTEST="no"
 
-    check_with_options "ths"
-    check_with_options "ths incoreres"
-    check_with_options "ths incoreres -cursor"
-    check_with_options "ths -cursor"
+    check_with_options ths
+    check_with_options ths -cursor
+    check_with_options ths incoreres
+    check_with_options ths incoreres -cursor
 
-    check_with_options "sa"
-    check_with_options "sa incoreres"
-    check_with_options "sa incoreres -cursor"
-    check_with_options "sa -cursor"
+    check_with_options sa
+    check_with_options sa -cursor
+    check_with_options sa incoreres
+    check_with_options sa incoreres -cursor
 
-    check_with_options "procs -compositing"
-    check_with_options "procs -compositing -cursor"
-    check_with_options "procs -compositing incoreres"
-    check_with_options "procs -compositing incoreres -cursor"
+    check_with_options procs -compositing
+    check_with_options procs -compositing -cursor
+    check_with_options procs -compositing incoreres
+    check_with_options procs -compositing incoreres -cursor
 
-    check_with_options "procs compositing"
-    check_with_options "procs compositing -cursor"
-    check_with_options "procs compositing incoreres"
-    check_with_options "procs compositing incoreres -cursor"
+    check_with_options procs compositing
+    check_with_options procs compositing -cursor
+    check_with_options procs compositing incoreres
+    check_with_options procs compositing incoreres -cursor
 else
     ONLYTEST="yes"
 
