@@ -14,7 +14,7 @@ check_minigui_components() {
         ./configure && make clean && make -j$NR_JOBS && sudo make install
         if [ "$?" != "0" ]; then
             echo "====="
-            echo "ERROR WHEN COMPILING $comp FOR $RUMMODE"
+            echo "ERROR WHEN COMPILING $comp FOR $RUNMODE"
             echo "====="
             exit 1
         fi
@@ -28,7 +28,7 @@ check_minigui_test() {
         ./configure && make clean && make -j$NR_JOBS && sudo make install
         if [ "$?" != "0" ]; then
             echo "====="
-            echo "ERROR WHEN COMPILING $comp FOR $RUMMODE"
+            echo "ERROR WHEN COMPILING $comp FOR $RUNMODE"
             echo "====="
             exit 1
         fi
@@ -159,7 +159,6 @@ check_with_options() {
         let index+=1
     done
 
-    echo "$OPTIONS"
     check_minigui_with_options "$OPTIONS"
 }
 
