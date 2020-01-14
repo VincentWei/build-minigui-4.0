@@ -9,9 +9,9 @@ source myconfig.sh
 RUNMODE="CURRENT RUNTIME INSTALLED"
 
 check_minigui_components() {
-    for comp in mgutils mgplus mgeff mgncs mgncs4touch mg-tests mg-tools mg-samples mg-demos; do
+    for comp in mgutils mgplus mgeff mgncs mgncs4touch mg-tests mg-tools mg-samples mg-demos cell-phone-ux-demo; do
         cd $comp
-        ./configure && make clean && make -j$NR_JOBS && sudo make install
+        ./configure --disable-static && make clean && make -j$NR_JOBS && sudo make install
         if [ "$?" != "0" ]; then
             echo "====="
             echo "ERROR WHEN COMPILING $comp FOR $RUNMODE"
@@ -25,7 +25,7 @@ check_minigui_components() {
 check_minigui_test() {
     for comp in mgutils mg-tests; do
         cd $comp
-        ./configure && make clean && make -j$NR_JOBS && sudo make install
+        ./configure --disable-static && make clean && make -j$NR_JOBS && sudo make install
         if [ "$?" != "0" ]; then
             echo "====="
             echo "ERROR WHEN COMPILING $comp FOR $RUNMODE"
@@ -39,7 +39,7 @@ check_minigui_test() {
 check_minigui_ths() {
     RUNMODE="MINIGUI THREADS"
     cd minigui
-    ./configure --with-runmode=ths --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
+    ./configure --disable-static --with-runmode=ths --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
     if [ "$?" != "0" ]; then
         echo "====="
         echo "ERROR WHEN COMPILING minigui FOR $RUNMODE"
@@ -54,7 +54,7 @@ check_minigui_ths() {
 check_minigui_ths_incore() {
     RUNMODE="MINIGUI THREADS WITH INCORE RESOURCE"
     cd minigui
-    ./configure --with-runmode=ths --enable-incoreres --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
+    ./configure --disable-static --with-runmode=ths --enable-incoreres --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
     if [ "$?" != "0" ]; then
         echo "====="
         echo "ERROR WHEN COMPILING minigui FOR $RUNMODE"
@@ -69,7 +69,7 @@ check_minigui_ths_incore() {
 check_minigui_ths_nocursor() {
     RUNMODE="MINIGUI THREADS WITH NO CURSOR"
     cd minigui
-    ./configure --with-runmode=ths --disable-cursor --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
+    ./configure --disable-static --with-runmode=ths --disable-cursor --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
     if [ "$?" != "0" ]; then
         echo "====="
         echo "ERROR WHEN COMPILING minigui FOR $RUNMODE"
@@ -84,7 +84,7 @@ check_minigui_ths_nocursor() {
 check_minigui_sa() {
     RUNMODE="MINIGUI STANDALONE"
     cd minigui
-    ./configure --with-runmode=sa --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
+    ./configure --disable-static --with-runmode=sa --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
     if [ "$?" != "0" ]; then
         echo "====="
         echo "ERROR WHEN COMPILING minigui FOR $RUNMODE"
@@ -99,7 +99,7 @@ check_minigui_sa() {
 check_minigui_procs_sharedfb() {
     RUNMODE="MINIGUI PROCESSES WITH SHAREDFB SCHEMA"
     cd minigui
-    ./configure --with-runmode=procs --disable-compositing --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
+    ./configure --disable-static --with-runmode=procs --disable-compositing --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
     if [ "$?" != "0" ]; then
         echo "====="
         echo "ERROR WHEN COMPILING minigui FOR $RUNMODE"
@@ -114,7 +114,7 @@ check_minigui_procs_sharedfb() {
 check_minigui_procs_compos() {
     RUNMODE="MINIGUI PROCESSES WITH COMPOSITING SCHEMA"
     cd minigui
-    ./configure --with-runmode=procs --enable-compositing --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
+    ./configure --disable-static --with-runmode=procs --enable-compositing --enable-develmode && make clean && make -j$NR_JOBS && sudo make install
     if [ "$?" != "0" ]; then
         echo "====="
         echo "ERROR WHEN COMPILING minigui FOR $RUNMODE"
@@ -127,7 +127,7 @@ check_minigui_procs_compos() {
 check_minigui_with_options() {
     RUNMODE="MiniGUI configured with $1"
     cd minigui
-    ./configure --enable-develmode $1 && make clean && make -j$NR_JOBS && sudo make install
+    ./configure --disable-static --enable-develmode $1 && make clean && make -j$NR_JOBS && sudo make install
     if [ "$?" != "0" ]; then
         echo "====="
         echo "ERROR WHEN COMPILING minigui FOR $RUNMODE"
