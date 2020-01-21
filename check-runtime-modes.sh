@@ -180,12 +180,13 @@ if [ $# == 0 ]; then
     check_with_options procs -compositing incoreres
     check_with_options procs -compositing incoreres -cursor
 
-    check_with_options procs compositing
     check_with_options procs compositing -cursor
     check_with_options procs compositing incoreres
     check_with_options procs compositing incoreres -cursor
+    check_with_options procs compositing -syncupdate
+    check_with_options procs compositing syncupdate
 else
-    ONLYTEST="yes"
+    ONLYTEST="no"
 
     check_with_options $*
 fi
