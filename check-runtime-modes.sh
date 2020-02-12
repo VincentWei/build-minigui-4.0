@@ -183,8 +183,8 @@ if [ $# == 0 ]; then
     check_with_options procs compositing -cursor
     check_with_options procs compositing incoreres
     check_with_options procs compositing incoreres -cursor
-    check_with_options procs compositing -syncupdate
-    check_with_options procs compositing syncupdate
+    check_with_options procs compositing -updateregion
+    check_with_options procs compositing updateregion
 else
     ONLYTEST="no"
 
