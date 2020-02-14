@@ -185,6 +185,7 @@ if [ $# == 0 ]; then
     check_with_options procs compositing incoreres -cursor
     check_with_options procs compositing -updateregion
     check_with_options procs compositing updateregion
+    check_with_options procs compositing updateregion virtualwindow
 else
     ONLYTEST="no"
 
