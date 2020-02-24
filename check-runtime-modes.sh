@@ -163,27 +163,24 @@ check_with_options() {
 }
 
 OPTIONS=( \
-    "ths" \
-    "ths -cursor" \
-    "ths incoreres" \
-    "ths incoreres -cursor" \
     "sa" \
     "sa virtualwindow" \
-    "sa -cursor" \
-    "sa incoreres" \
-    "sa incoreres -cursor" \
+    "ths" \
+    "ths incoreres -cursor" \
+    "procs compositing" \
     "sa incoreres -cursor virtualwindow" \
+    "sa -cursor -updateregion" \
+    "ths -cursor" \
+    "ths incoreres" \
+    "ths incoreres -cursor -updateregion" \
     "procs -compositing" \
-    "procs -compositing -cursor" \
     "procs -compositing incoreres" \
     "procs -compositing incoreres -cursor" \
-    "procs -compositing updateregion virtualwindow" \
     "procs compositing -cursor" \
     "procs compositing incoreres" \
     "procs compositing incoreres -cursor" \
     "procs compositing -updateregion" \
-    "procs compositing updateregion" \
-    "procs compositing updateregion virtualwindow" \
+    "procs compositing virtualwindow" \
 )
 
 if [ $# == 0 ]; then
