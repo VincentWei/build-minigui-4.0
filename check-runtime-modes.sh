@@ -162,34 +162,65 @@ check_with_options() {
     check_minigui_with_options "$OPTIONS"
 }
 
+OPTIONS=( \
+    "sa" \
+    "sa virtualwindow" \
+    "ths" \
+    "ths incoreres -cursor" \
+    "procs compositing" \
+    "sa incoreres -cursor virtualwindow" \
+    "sa -cursor -updateregion" \
+    "ths -cursor" \
+    "ths incoreres" \
+    "ths incoreres -cursor -updateregion" \
+    "procs -compositing" \
+    "procs -compositing incoreres" \
+    "procs -compositing incoreres -cursor" \
+    "procs compositing -cursor" \
+    "procs compositing incoreres" \
+    "procs compositing incoreres -cursor" \
+    "procs compositing -updateregion" \
+    "procs compositing virtualwindow" \
+)
+
 if [ $# == 0 ]; then
     ONLYTEST="no"
 
-    check_with_options ths
-    check_with_options ths -cursor
-    check_with_options ths incoreres
-    check_with_options ths incoreres -cursor
+    if [ -f ".last_option" ]; then 
+        last_option=`cat .last_option`
 
-    check_with_options sa
-    check_with_options sa -cursor
-    check_with_options sa incoreres
-    check_with_options sa incoreres -cursor
+        echo start from last bad running: $last_option
 
-    check_with_options procs -compositing
-    check_with_options procs -compositing -cursor
-    check_with_options procs -compositing incoreres
-    check_with_options procs -compositing incoreres -cursor
+        for i in ${!OPTIONS[*]}
+        do
+            if [ "$last_option" == "${OPTIONS[$i]}" ]; then
+                break
+            fi
+        done
 
-    check_with_options procs compositing -cursor
-    check_with_options procs compositing incoreres
-    check_with_options procs compositing incoreres -cursor
-    check_with_options procs compositing -syncupdate
-    check_with_options procs compositing syncupdate
+        for ((j=$i; j<${#OPTIONS[*]}; ++j))  
+        do
+            option=${OPTIONS[$j]}
+            echo $option > .last_option
+            check_with_options $option
+        done  
+
+    else
+        for ((j=0; j<${#OPTIONS[*]}; ++j))  
+        do
+            option=${OPTIONS[$j]}
+            echo $option > .last_option
+            check_with_options $option
+        done
+    fi
 else
     ONLYTEST="no"
 
+    echo $* > .last_option
     check_with_options $*
 fi
+
+rm .last_option
 
 echo "====="
 echo "PASSED"
