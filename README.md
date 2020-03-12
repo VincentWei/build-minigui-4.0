@@ -37,26 +37,43 @@ does not provide support for libpng12-dev.
 
 Please make sure that you can visit GitHub and you can do `sudo` on your Linux box.
 
+1. Clone this repo from GitHub:
+
+```
+$ git clone https://github.com/VincentWei/build-minigui-4.0.git
+$ cd build-minigui-4.0/
+```
+
 1. Copy `config.sh` to `myconfig.sh` and edit `myconfig.sh` to match your needs:
 
-        $ cp config.sh myconfig.sh
+```
+$ cp config.sh myconfig.sh
+```
 
 1. Run `fetch-all.sh` to fetch all source from GitHub:
 
-        $ ./fetch-all.sh
+```
+$ ./fetch-all.sh
+```
 
 1. Run `build-deps.sh` to build and install gvfb, chipmunk, and harfbuzz:
 
-        $ ./build-deps.sh
+```
+$ ./build-deps.sh
+```
 
 1. Run `build-all.sh` to build all:
 
-        $ ./build-all.sh
+```
+$ ./build-all.sh
+```
 
 1. Run `mguxdemo`:
 
-        $ cd /usr/local/bin
-        $ ./mguxdemo
+```
+$ cd /usr/local/bin
+$ ./mguxdemo
+```
 
 When there were some updates in the remote repos, you can run `update-all.sh` to
 update them. You can run `clean-build-all.sh` to uninstall, clean,
@@ -72,36 +89,42 @@ your information:
 
 1. Make and install `gvfb`:
 
-        $ cd gvfb
-        $ cmake .
-        $ make; sudo make install
-        $ cd ..
+```
+$ cd gvfb
+$ cmake .
+$ make; sudo make install
+$ cd ..
+```
 
 1. Make and install `chipmunk` library (DO NOT use the chipmunk-dev package
    which is provided by Ubuntu):
 
-        $ cd 3rd-party/chipmunk
-        $ cmake .
-        $ make; sudo make install
-        $ cd ../..
+```
+$ cd 3rd-party/chipmunk
+$ cmake .
+$ make; sudo make install
+$ cd ../..
+```
 
 1. Make and install `harfbuzz` library (DO NOT use the harfbuzz-dev package
    which is provided by Ubuntu):
 
-        $ cd 3rd-party/harfbuzz
-        $ ./autogen.sh
-        $ ./config-extern.sh
-        $ make; sudo make install
-        $ cd ../..
+```
+$ cd 3rd-party/harfbuzz
+$ ./autogen.sh
+$ ./config-extern.sh
+$ make; sudo make install
+$ cd ../..
+```
 
-## ChangeLog
+## Change Log
 
 Currently, this repo just includes some scripts to build MiniGUI 4.0.x
 core, components, and demonstration apps.
 
 ## Copying
 
-Copyright (C) 2019 Beijing FMSoft Technologies Co., Ltd.
+Copyright (C) 2020 Beijing FMSoft Technologies Co., Ltd.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -140,6 +163,6 @@ Please refer to the `LICENSE` or `COPYING` files in the source trees for more
 information.
 
 Note that the software fetched from remote repositories may use different
-licenses.  Please refer to the `LICENSE` or `COPYING` files in the sorce trees
+licenses.  Please refer to the `LICENSE` or `COPYING` files in the source trees
 for more information.
 
