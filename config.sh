@@ -11,10 +11,14 @@
 REPO_URL=https://github.com/VincentWei
 
 # Use this one if you can visit GitHub via SSH
-#REPO_URL=git@github.com:VincentWei
+# REPO_URL=git@github.com:VincentWei
 
 # Use this one if you are a developer of MiniGUI
-#REPO_URL=git4os@gitlab.fmsoft.cn:VincentWei
+# REPO_URL=git4os@gitlab.fmsoft.cn:VincentWei
+
+#
+# The branch name; MiniGUI 4.0.x are located in rel-4-0 branch
+BRANCH_NAME=rel-4-0
 
 #
 # Global configuration options
