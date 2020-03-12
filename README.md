@@ -4,6 +4,8 @@ This repo contains some scripts and dependencies to build MiniGUI 4.0.x
 
 This instruction assumes that you are using Ubuntu Linux 16.04 LTS or 18.04 LTS.
 
+Note that, we have switched the repos to branch rel-4-0.
+
 ## Prerequisites
 
 You should run `apt install <package_name>` to install the following packages
