@@ -168,10 +168,10 @@ OPTIONS=( \
     "ths incoreres -cursor" \
     "ths -cursor" \
     "ths incoreres" \
-    "procs" \
     "procs -cursor" \
     "procs incoreres" \
     "procs incoreres -cursor" \
+    "procs" \
 )
 
 if [ $# == 0 ]; then
