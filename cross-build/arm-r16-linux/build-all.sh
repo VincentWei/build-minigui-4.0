@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source myconfig.sh
+source modify-this-config.sh 
 
 # If you use r16 toolchain to compile kernel and some package, this is the rootfs of output.
 PLATFORM_DIR=$TINA_DIR/out/astar-parrot

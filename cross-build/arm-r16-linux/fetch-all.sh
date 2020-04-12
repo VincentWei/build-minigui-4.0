@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ================ Get global settings ===================
-source myconfig.sh
+source modify-this-config.sh 
 # ================ Get global settings ===================
 
 
