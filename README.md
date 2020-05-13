@@ -1,5 +1,14 @@
 # Building MiniGUI 4.0
 
+- [Prerequisites](#prerequisites)
+- [Steps](#steps)
+- [Commands to build dependencies](#commands-to-build-dependencies)
+- [Cross Building](#cross-building)
+- [Change Log](#change-log)
+- [Copying](#copying)
+   + [Special Statement](#special-statement)
+   + [Other Notes](#other-notes)
+
 This repo contains some scripts and dependencies to build MiniGUI 4.0.x
 
 This instruction assumes that you are using Ubuntu Linux 16.04 LTS or 18.04 LTS.
@@ -119,7 +128,8 @@ $ make; sudo make install
 $ cd ../..
 ```
 
-## Cross Compile
+## Cross Building
+
 MiniGUI 4.0.x can run on lots of CPUs with different architechtures, such as
 ARM, MIPS and so on, after cross compiled. There is a directory named
 "cross-build", in which there are some scripts for cross compile.
@@ -127,10 +137,11 @@ ARM, MIPS and so on, after cross compiled. There is a directory named
 As an example, there is a directory name "arm-r16-linux", which means: This
 directory is for ARM CPU --- r16, and the Operation System is Linux. In this
 directory, there are two scipts for download packages, and build MiniGUI 4.0.x
-for ARM version. You can read the README.md in this directory in detail.
+for ARM version. You can read the README.md in this directory in detail:
+
+  - [arm-r16-linux](cross-build/arm-r16-linux/README.md)
 
 Of course you can build your own directory for your developped CPU and OS.
-
 
 ## Change Log
 
