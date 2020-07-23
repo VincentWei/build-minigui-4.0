@@ -18,9 +18,3 @@ cmake .
 make -j$NR_JOBS; sudo make install
 cd ../..
 
-echo "BUILDING harfbuzz"
-cd 3rd-party/harfbuzz
-./autogen.sh
-./config-extern.sh
-make -j$NR_JOBS; sudo make install
-cd ../..
